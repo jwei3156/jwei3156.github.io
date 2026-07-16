@@ -1,0 +1,48 @@
+baseURL = 'https://jwei3156.github.io/'
+locale = 'zh-cn'
+title = 'Jw Blog'
+theme = "PaperMod"
+
+[params]
+    DisableSpecial1stPost = true
+    ShowReadingTime = false
+    ShowShareButtons = false
+    ShowCodeCopyButtons = true
+    # 核心内容目录
+    mainSections = ["computerbasics", "ctfbasic", "security"]
+
+    # ==========================================
+    # 文章内侧边栏目录 (TOC) 配置
+    # ==========================================
+    ShowToc = true          # 默认全局开启文章目录
+    TocOpen = true          # 自动展开目录
+
+# ==========================================
+# 导航栏按键与技术目录结构映射
+# ==========================================
+
+# 1. 计算机基础
+[[menu.main]]
+    name = "计算机基础"
+    url = "/computerbasics/"
+    weight = 10
+
+# 2. CTF基础
+[[menu.main]]
+    name = "CTF基础"
+    url = "/ctfbasic/"
+    weight = 20
+
+# 3. 安全研究（顶级菜单）
+[[menu.main]]
+    name = "安全研究"
+    identifier = "security" # 唯一标识符，用于挂载子菜单
+    url = "/security/"
+    weight = 30
+
+# 3.1 安全研究 -> 逆向工程（子菜单）
+[[menu.main]]
+    name = "└─ 逆向工程"
+    parent = "security"    # 绑定到上面的 identifier
+    url = "/security/reverse/"
+    weight = 31
