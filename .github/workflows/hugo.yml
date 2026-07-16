@@ -21,7 +21,6 @@ defaults:
 
 jobs:
   build:
-    runs-mode: ubuntu-latest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
