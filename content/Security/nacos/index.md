@@ -47,11 +47,7 @@ nacos / nacos
 
 
 
-
-
-### 未授权访问
-
-- 未授权查看用户信息
+### 未授权查看用户信息
 
 在`/console/src/main/resources/application.properties`中开启了总健全`nacos.core.auth.enabled=false`或添加路径的白名单
 
@@ -75,7 +71,9 @@ nacos.security.ignore.urls=.../v1/auth/**,/v1/console/health/**,/actuator/**,/v1
 
 ![image-20260714194552521](./assets/image-20260714194552521.png)
 
-- User-Agent绕过
+### User-Agent绕过
+
+**CVE-2021-29441** 触发版本：`1.2.0 <= Nacos < 1.4.1`
 
 配置可能有白名单就会触发
 
@@ -91,7 +89,9 @@ nacos.security.ignore.urls=.../v1/auth/**,/v1/console/health/**,/actuator/**,/v1
 
 请求方法改为DELETE后即可删除用户
 
-- 默认jwt密钥
+### 默认jwt密钥
+
+触发版本：`0.1.0 <= Nacos <= 2.1.0`
 
 **jwt**：校验登录成功的用户
 
@@ -125,15 +125,15 @@ https://www.jwt.io/
 
 
 
+### 未授权接口命令执行
 
+**CVE-2021-29442** 受影响版本：`nacos <= 1.4.0`
 
+必须使用内置存储模式，不能外接mysql等
 
+而且`/v1/cs/ops/derby`暴露且可以访问
 
-
-
-
-
-
+![image-20260723170624878](./assets/image-20260723170624878.png)
 
 
 
