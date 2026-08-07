@@ -9,7 +9,7 @@ theme = "PaperMod"
     ShowShareButtons = false
     ShowCodeCopyButtons = true
     # 核心内容目录
-    mainSections = ["computerbasics", "ctfbasic", "security"]
+    mainSections = ["computerbasics", "ctfbasic", "security","blockchain"]
 
     # ==========================================
     # 文章内侧边栏目录 (TOC) 配置
@@ -40,9 +40,9 @@ theme = "PaperMod"
     url = "/security/"
     weight = 30
 
-# 3.1 安全研究 -> 逆向工程（子菜单）
+# 3. 区块链学习（顶级菜单）
 [[menu.main]]
-    name = "└─ 逆向工程"
-    parent = "security"    # 绑定到上面的 identifier
-    url = "/security/reverse/"
-    weight = 31
+    name = "区块链学习"
+    identifier = "blockchain" # 唯一标识符，用于挂载子菜单
+    url = "/blockchain/"
+    weight = 30

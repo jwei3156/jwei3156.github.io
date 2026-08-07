@@ -50,6 +50,29 @@ docker start ruoyi-mysql
 
 之后运行`RuoYiApplication`就可以启动了
 
+### 未授权访问
+
+尝试url路径
+
+```
+# 文件上传
+/common/upload
+
+# 注册
+/register
+
+# spring
+/actuator
+
+# swagger未授权
+/swagger-ui
+
+# druid未授权
+/druid/login.html
+```
+
+
+
 ### shiro
 
 `ruoyi-admin/main/resource/application.yml`中有aes加密密钥
