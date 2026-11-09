@@ -1,6 +1,9 @@
 # 调试
 hugo server -D
 
+# 远程更新
+git pull --rebase origin main
+
 # 将所有新写的笔记、修改的配置添加到暂存区
 git add .
 
