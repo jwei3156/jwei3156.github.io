@@ -2,6 +2,7 @@
 title: "solidity基础"
 date: 2026-11-20T20:00:00+08:00
 draft: false
+url: /blockchain/solidity_01/solidity/
 ---
 
 ## 测试部署
